@@ -1,0 +1,12 @@
+*.lastbuildstate
+CppLesson06/01.OverloadOperators/01.OverloadOperators.vcxproj.filters
+*.tlog
+CppLesson06/01.OverloadOperators/Debug/01.OverloadOperators.log
+*.pch
+CppLesson06/01.OverloadOperators/Debug/stdafx.obj
+*.idb
+CppLesson06/01.OverloadOperators/Debug/vc120.pdb
+*.filters
+CppLesson06/02.Excercise/Debug/02.Excercise.log
+*.pdb
+*.obj
