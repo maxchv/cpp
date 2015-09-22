@@ -10,3 +10,8 @@ CppLesson06/01.OverloadOperators/Debug/vc120.pdb
 CppLesson06/02.Excercise/Debug/02.Excercise.log
 *.pdb
 *.obj
+*.exe
+*.ilk
+*.rar
+*.ipch
+*.log
