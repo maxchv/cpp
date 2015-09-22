@@ -15,3 +15,5 @@ CppLesson06/02.Excercise/Debug/02.Excercise.log
 *.rar
 *.ipch
 *.log
+*.bin
+*.opensdf
