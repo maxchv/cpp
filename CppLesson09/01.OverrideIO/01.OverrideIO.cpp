@@ -26,6 +26,19 @@ class var
 		}
 		return can;
 	}
+	bool canConvertToDouble() const
+	{
+		bool can = true;
+		for (int i = 0; i < strlen(str); i++)
+		{
+			if (!isdigit(str[i]) || str[i] != '.')
+			{
+				can = false;
+				break;
+			}
+		}
+		return can;
+	}
 	// 	определяет длинну целого числа
 	int lenIntNum()	const
 	{
@@ -133,36 +146,24 @@ ostream& operator<<(ostream &stream, const var& v)
 
 istream& operator>>(istream &stream, var& v)
 {
-	cout << "What type of date do you want: " << endl;
-	cout << "1. Integer" << endl
-		<< "2. Double" << endl
-		<< "3. String" << endl << endl;
-	int i;
-	stream >> i;
-	cout << "Type your data: ";
-	switch (i)
+	char buff[256];	
+	
+	stream.getline(buff, 255);
+	v.str = new char[strlen(buff) + 1];
+	strcpy(v.str, buff);
+	v.var_type = var::STRING;
+
+	if (v.canConvertToInt())
 	{
-	case 1:
-		stream >> v.i;
+		v.i = atoi(v.str);
 		v.var_type = var::INT;
-		break;
-	case 2:
-		stream >> v.d;
-		v.var_type = var::DOUBLE;
-		break;
-	case 3:
+	}
+	else if (v.canConvertToDouble())
 	{
-		char buff[256];
-		getchar();
-		stream.getline(buff, 255);
-		v.str = new char[strlen(buff) + 1];
-		strcpy(v.str, buff);
-		v.var_type = var::STRING;
+		v.d = atof(v.str);
+		v.var_type = var::DOUBLE;
 	}
-		break;
-	default:
-		break;
-	}
+
 	return stream;
 }
 
@@ -206,6 +207,7 @@ void ex01()
 	cout << i + s1 << endl;
 	cout << s1 + i << endl;
 
+	cout << "Type your data: ";
 	cin >> s1;
 	cout << s1 << endl;
 }
