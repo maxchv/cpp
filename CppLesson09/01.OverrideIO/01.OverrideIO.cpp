@@ -109,6 +109,7 @@ public:
 	}
 
 	friend ostream& operator<<(ostream &stream, const var& v);
+	friend istream& operator>>(istream &stream, var& v);
 };
 
 ostream& operator<<(ostream &stream, const var& v)
@@ -123,6 +124,41 @@ ostream& operator<<(ostream &stream, const var& v)
 		break;
 	case var::STRING:
 		stream << v.str;
+		break;
+	default:
+		break;
+	}
+	return stream;
+}
+
+istream& operator>>(istream &stream, var& v)
+{
+	cout << "What type of date do you want: " << endl;
+	cout << "1. Integer" << endl
+		<< "2. Double" << endl
+		<< "3. String" << endl << endl;
+	int i;
+	stream >> i;
+	cout << "Type your data: ";
+	switch (i)
+	{
+	case 1:
+		stream >> v.i;
+		v.var_type = var::INT;
+		break;
+	case 2:
+		stream >> v.d;
+		v.var_type = var::DOUBLE;
+		break;
+	case 3:
+	{
+		char buff[256];
+		getchar();
+		stream.getline(buff, 255);
+		v.str = new char[strlen(buff) + 1];
+		strcpy(v.str, buff);
+		v.var_type = var::STRING;
+	}
 		break;
 	default:
 		break;
@@ -169,6 +205,9 @@ void ex01()
 	var s1 = "105F";
 	cout << i + s1 << endl;
 	cout << s1 + i << endl;
+
+	cin >> s1;
+	cout << s1 << endl;
 }
 
 int _tmain(int argc, _TCHAR* argv[])
