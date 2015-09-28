@@ -41,8 +41,7 @@ public:
 	Array(const Array& orig) // конструктор копирования
 	{
 		copy(orig);
-	}
-	
+	}		
 	Array& operator=(const Array& orig)
 	{
 		copy(orig);
@@ -51,8 +50,7 @@ public:
 	~Array()
 	{
 		delete[] arr;
-	}
-
+	}			
 	int length() const
 	{
 		return size;
