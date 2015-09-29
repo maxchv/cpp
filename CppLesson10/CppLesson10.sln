@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01.RValueRef", "01.RValueRe
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02.MoveSemantic", "02.MoveSemantic\02.MoveSemantic.vcxproj", "{4B29302C-1D3A-4235-B128-2F95A85AB781}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03.Templates", "03.Templates\03.Templates.vcxproj", "{FFF31F32-5786-4FFE-9AF1-FC700CB91D4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -21,6 +23,10 @@ Global
 		{4B29302C-1D3A-4235-B128-2F95A85AB781}.Debug|Win32.Build.0 = Debug|Win32
 		{4B29302C-1D3A-4235-B128-2F95A85AB781}.Release|Win32.ActiveCfg = Release|Win32
 		{4B29302C-1D3A-4235-B128-2F95A85AB781}.Release|Win32.Build.0 = Release|Win32
+		{FFF31F32-5786-4FFE-9AF1-FC700CB91D4F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FFF31F32-5786-4FFE-9AF1-FC700CB91D4F}.Debug|Win32.Build.0 = Debug|Win32
+		{FFF31F32-5786-4FFE-9AF1-FC700CB91D4F}.Release|Win32.ActiveCfg = Release|Win32
+		{FFF31F32-5786-4FFE-9AF1-FC700CB91D4F}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
