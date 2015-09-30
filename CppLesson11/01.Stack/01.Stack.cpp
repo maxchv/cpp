@@ -4,7 +4,8 @@
 #include "stdafx.h"
 #include <iostream>
 using namespace std;
-
+#include <string.h>
+#pragma warning(disable: 4996)
 // —тек - структура данных реализующа€ принцип LIFO
 //		  Last In First Out
 template<typename T>
@@ -17,7 +18,7 @@ class Stack
 	// выделение дополнительной пам€ти
 	void resize(int new_size)
 	{
-		T *tmp = new T[new_size]; 
+		T *tmp = new T[new_size];
 		// копирование стека
 		for (int i = 0; i < idx + 1; i++)
 		{
@@ -32,13 +33,13 @@ public:
 	{
 		size = 10;
 		idx = -1;
-		stack = new int[size];
+		stack = new T[size];
 	}
 	Stack(int n)
 	{
 		size = n;
 		idx = -1;
-		stack = new int[size];
+		stack = new T[size];
 	}
 
 	// вталкивает элемент item в стек
@@ -47,7 +48,7 @@ public:
 		if (idx >= size - 1)   // если добавл€ем новый элемент, а пам€ти не хватает
 		{
 			resize(size + 10); // добавл€ем дополнительно пам€ть дл€ хранени€ еще 10 элементов
-		}		
+		}
 		stack[++idx] = item;
 	}
 
@@ -88,11 +89,11 @@ void ex01()
 		cout << stack.pop() << endl;
 	}
 }
-
+ 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	ex01();
-
+	//ex01();
+	
 	return 0;
 }
 
