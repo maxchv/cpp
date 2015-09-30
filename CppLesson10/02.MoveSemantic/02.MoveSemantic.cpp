@@ -6,9 +6,10 @@
 #include <iostream>
 using namespace std;
 
+template <typename T>
 class Array
 {
-	int *arr;
+	T *arr;
 	int size;
 public:
 	Array() = delete;
@@ -45,7 +46,7 @@ public:
 		return size;
 	}
 	
-	int& operator[](int idx)
+	T& operator[](int idx)
 	{
 		return arr[idx];
 	}
@@ -90,7 +91,8 @@ public:
 	}
 };
 
-ostream& operator<<(ostream& stream, Array& arr)
+template<typename T>
+ostream& operator<<(ostream& stream, Array<T>& arr)
 {
 	for (int i = 0; i < arr.length(); i++)
 	{
@@ -101,10 +103,33 @@ ostream& operator<<(ostream& stream, Array& arr)
 	return stream;
 }
 
+class Person
+{
+	
+};
+
+class Appartment
+{
+	//Person* persons;
+	Array<Person> persons;
+public:
+	Appartment(int n) : persons(n)
+	{
+		
+	}
+
+};
+
+class House
+{
+	Array<Appartment> appartments;
+public:
+};
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 	int n = 1e8;
-	Array a(n), b(n);
+	Array<int> a(n), b(n);
 	for (int i = 0; i < n; i++)
 	{
 		a[i] = i;
