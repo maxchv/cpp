@@ -156,6 +156,12 @@ void ex01()
 void ex02()
 {
 	SmartPointer<int> p(new int[10]);
+	SmartPointer<int *>ap(new int*[10]);
+	for (int i = 0; i < 10; i++)
+	{
+		//ap[i] = new int[10];
+	}
+
 	for (int i = 0; i < 10; i++)
 	{
 		p[i] = i;
