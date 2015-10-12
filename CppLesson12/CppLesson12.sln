@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02.SmatPointer", "02.SmatPo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03.StaticData", "03.StaticData\03.StaticData.vcxproj", "{622903C7-1E0B-4F37-9B0D-900D1B09274F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04.ExchangeMoney", "04.ExchangeMoney\04.ExchangeMoney.vcxproj", "{592F6B1E-431E-485D-B774-49E6FB2096B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{622903C7-1E0B-4F37-9B0D-900D1B09274F}.Release|x64.Build.0 = Release|x64
 		{622903C7-1E0B-4F37-9B0D-900D1B09274F}.Release|x86.ActiveCfg = Release|Win32
 		{622903C7-1E0B-4F37-9B0D-900D1B09274F}.Release|x86.Build.0 = Release|Win32
+		{592F6B1E-431E-485D-B774-49E6FB2096B8}.Debug|x64.ActiveCfg = Debug|x64
+		{592F6B1E-431E-485D-B774-49E6FB2096B8}.Debug|x64.Build.0 = Debug|x64
+		{592F6B1E-431E-485D-B774-49E6FB2096B8}.Debug|x86.ActiveCfg = Debug|Win32
+		{592F6B1E-431E-485D-B774-49E6FB2096B8}.Debug|x86.Build.0 = Debug|Win32
+		{592F6B1E-431E-485D-B774-49E6FB2096B8}.Release|x64.ActiveCfg = Release|x64
+		{592F6B1E-431E-485D-B774-49E6FB2096B8}.Release|x64.Build.0 = Release|x64
+		{592F6B1E-431E-485D-B774-49E6FB2096B8}.Release|x86.ActiveCfg = Release|Win32
+		{592F6B1E-431E-485D-B774-49E6FB2096B8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

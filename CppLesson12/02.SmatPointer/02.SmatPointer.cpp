@@ -27,19 +27,20 @@ class SmartPointer
 {
 	T *d;
 	//bool is_copy;
-	int copy;
+	static int copy;
 public:
 	SmartPointer(T *data)
 	{
 		d = data;
 		//is_copy = false;
-		copy = 0;
+		//copy = 0;
 	}
 
 	SmartPointer(const SmartPointer& orig)
 	{
 		d = orig.d;
-		copy = orig.copy + 1;
+		//copy = orig.copy + 1;
+		copy++;
 	}
 
 	SmartPointer& operator=(SmartPointer &orig)
@@ -47,7 +48,8 @@ public:
 		if (d != orig.d) {
 			d = orig.d;
 			//is_copy = true;
-			copy = orig.copy + 1;
+			//copy = orig.copy + 1;
+			copy++;
 		}
 		return *this;
 	}
@@ -71,10 +73,14 @@ public:
 		}
 		else
 		{
+			cout << "delte copy " << copy << endl;
 			copy--;
 		}
 	}
 };
+
+template <typename T>
+int SmartPointer<T>::copy = 0;
 
 class BlackBox
 {
