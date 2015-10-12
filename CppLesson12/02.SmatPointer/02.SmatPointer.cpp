@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include <iostream>
 using namespace std;
-
+#include <memory>
 class SomeData
 {
 public:
@@ -61,19 +61,19 @@ public:
 	// оператор преобразования типа из SmartPointer в T*
 	operator T*()
 	{
-		cout << "Operator T*" << endl;
+		//cout << "Operator T*" << endl;
 		return d;
 	}
 	~SmartPointer()
 	{
 		if (!copy) // если не копия
 		{
-			cout << "destructor" << endl;
-			delete d;
+			//cout << "destructor" << endl;
+			delete[] d;
 		}
 		else
 		{
-			cout << "delte copy " << copy << endl;
+			//cout << "delte copy " << copy << endl;
 			copy--;
 		}
 	}
@@ -150,12 +150,27 @@ void ex01()
 	SmartPointer<BlackBox> p3 = p1;
 	p3->print();
 
-	p = p1;
+	p = p1;	
+}
+
+void ex02()
+{
+	SmartPointer<int> p(new int[10]);
+	for (int i = 0; i < 10; i++)
+	{
+		p[i] = i;
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		cout << p[i] << " ";
+	}
 }
 
 int main()
 {
-	ex01();
+	//ex01();
+	ex02();	
+	
 	return 0;
 }
 
