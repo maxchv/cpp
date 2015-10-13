@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 #pragma warning(disable: 4996)
-
+class Group;
 class Student
 {
 	char name[20]; // имя
@@ -22,7 +22,8 @@ public:
 	{
 		stream << s.name << " average mark: " << s.aver_mark;
 		return stream;
-	}	
+	}
+	friend class Group;
 };
 
 class Group
@@ -30,6 +31,7 @@ class Group
 	Student* head; // указатель на список студентов т.е. на первого студента
 	Student* tail; // последний студент
 	int count;
+
 public:
 	Group()
 	{
@@ -41,20 +43,48 @@ public:
 	// Добавление студента в начало списка
 	void AddHeadStudent(char *name, int am)
 	{
+		Student* tmp = new Student(name, am);
 		// Если список пуст, то добавить первый элемент
-		// Иначе, доавить пере первым элементом
+		if (!head)
+		{
+			head = tail = tmp;
+		}
+		else // Иначе, доавить пере первым элементом
+		{
+			tmp->next = head;
+			head = tmp;
+		}
+		count++;
 	}
 
 	// Добавление студента в середну после студента с именем after_student
 	void InsertAfterStudent(char *after_student, char *name, int am)
 	{
+		Student* tmp = new Student(name, am);
+		// Поиск места вставки т.е. узла за которым вставлять данные
+		Student *cur = head;
+		while (cur != NULL && strcmp(cur->name, after_student) != 0)
+		{
+			cur = cur->next;
+		}
 
+		if (cur != NULL)
+		{	
+			tmp->next = cur->next;
+			cur->next = tmp;
+		}
+		else
+		{
+			AddStudent(name, am);
+		}
+
+		count++;
 	}
 
 	// добавление студента в хвост списка
 	void AddStudent(char *name, int am)
 	{
-		Student* tmp = new Student(name, am); 
+		Student* tmp = new Student(name, am);
 		if (head == NULL) // в списке нет студентов
 		{
 			head = tail = tmp;
@@ -65,6 +95,60 @@ public:
 			tail = tmp;
 		}
 		count++;
+	}
+
+	int Size()
+	{
+		return count;
+	}
+	// удаление первого студента из списка
+	void DeleteHead()
+	{
+
+	}
+	
+	// удаление последнего элемента из списка
+	void DeleteTail()
+	{
+		if (head) // не пуст ли список?
+		{
+			if (count == 1) // если единственны студент в списке
+			{
+				delete head;
+				head = tail = NULL;
+			}
+			else
+			{
+				Student *prev = head;
+				while (prev->next->next) // поиск предпоследнего элемента списка
+				{
+					prev = prev->next;
+				}
+				if (prev) // найден предпоследний элемент
+				{
+					delete tail;
+					tail = prev;
+					tail->next = NULL;
+				}
+			}
+			count--;
+		}		
+	}
+
+	// удаление студента с именем name
+	void DeleteItem(char* name)
+	{
+
+	}
+
+	~Group()
+	{
+		while (head != NULL)
+		{			
+			Student *next = head->next;
+			delete head;
+			head = next;
+		}
 	}
 
 	friend ostream& operator<<(ostream& stream, Group &g)
@@ -87,6 +171,9 @@ void ex01()
 	group.AddStudent("Lola", 12);
 	group.AddStudent("Masha", 11);
 	group.AddStudent("Rita", 10);
+	group.AddHeadStudent("Mila", 12);
+	group.InsertAfterStudent("Lola", "Rima", 11);
+	group.DeleteTail();
 	cout << group << endl;
 }
 
