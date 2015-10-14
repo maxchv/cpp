@@ -105,21 +105,25 @@ public:
 		cout << endl;
 	}
 
+	// Удаление головы списка
 	void DeleteHead()
 	{
 
 	}
 
+	// Удаление хвоста списка
 	void DeleteTail()
 	{
 
 	}
 
+	// Удаление элемента списка с данными data
 	void DeleteItem(int data)
 	{
 
 	}
 
+	// Деструктор - очистка памяти выделенной под хранение списка
 	~DList()
 	{
 
@@ -154,21 +158,16 @@ void ex01()
 
 	cout << list << endl;
 
+	list.DeleteHead();
+	list.DeleteTail();
+	list.DeleteItem(4);
+
 	list.showReverse();
 }
-
-union myunion
-{
-	char ch;
-	short sh;
-	int   in;	
-};
 
 int main()
 {
 	ex01();
-
-	
 
     return 0;
 }
