@@ -23,6 +23,20 @@ class DList
 	Node *head;  // голова списка
 	Node *tail;  // хвост списка
 	int count;   // размер списка
+
+	void AddTail(Node *tmp)
+	{		
+		if (!head) // список пуст
+		{
+			head = tail = tmp;
+		}
+		else
+		{
+			tail->next = tmp;
+			tmp->prev = tail;
+			tail = tmp;
+		}
+	}
 public:
 	DList() : head(0), tail(NULL), count(0)
 	{}
@@ -46,6 +60,68 @@ public:
 	// ƒобавление хвоста списка
 	void AddTail(int data)
 	{
+		AddTail(new Node(data));		
+	}
+
+	// вставка элемента после элемента after
+	void InsertAfter(int after, int data)
+	{
+		Node* tmp = new Node(data);
+		if (!head) // список пуст
+		{
+			head = tail = tmp;
+		}
+		else
+		{
+			Node* cur = head;
+			// ѕоиск места вставки
+			while (cur != NULL && cur->data != after)
+			{
+				cur = cur->next;				
+			}
+			
+			if (!cur || cur == tail) // нет данных или место вставки - последний элемент списка
+			{
+				AddTail(tmp);
+			}
+			else // вставка в середину
+			{
+				tmp->next = cur->next;
+				tmp->prev = cur;
+				cur->next = tmp;
+				tmp->next->prev = tmp;
+			}
+		}
+	}
+	// ќтображение списка в обратном пор€дке
+	void showReverse()
+	{
+		Node* cur = tail;
+		while (cur)
+		{
+			cout << cur->data << " ";
+			cur = cur->prev;
+		}
+		cout << endl;
+	}
+
+	void DeleteHead()
+	{
+
+	}
+
+	void DeleteTail()
+	{
+
+	}
+
+	void DeleteItem(int data)
+	{
+
+	}
+
+	~DList()
+	{
 
 	}
 
@@ -65,15 +141,34 @@ public:
 void ex01()
 {
 	DList list;
+	
 	list.AddHead(3);
 	list.AddHead(2);
 	list.AddHead(1);
+
+	list.AddTail(5);
+	list.AddTail(6);
+	list.AddTail(7);
+
+	list.InsertAfter(3, 4);
+
 	cout << list << endl;
+
+	list.showReverse();
 }
+
+union myunion
+{
+	char ch;
+	short sh;
+	int   in;	
+};
 
 int main()
 {
 	ex01();
+
+	
 
     return 0;
 }
