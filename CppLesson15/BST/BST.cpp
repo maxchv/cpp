@@ -36,6 +36,15 @@ class BST // бинарное дерево поиска
 			}
 		}
 	}
+	void showTree(Leaf *cur)
+	{
+		if (cur)
+		{
+			showTree(cur->right);			
+			cout << *cur << " ";
+			showTree(cur->left);			
+		}
+	}
 public:
 	BST(): root(NULL), count(0)
 	{}
@@ -51,11 +60,12 @@ public:
 		{
 			addItem(root, tmp);
 		}
+		count++;
 	}
 
 	void showTree()
 	{
-
+		showTree(root);
 	}
 
 };
@@ -68,7 +78,7 @@ int main()
 	b.addItem(5);
 	b.addItem(20);
 	b.addItem(3);
-
+	b.showTree();
     return 0;
 }
 
