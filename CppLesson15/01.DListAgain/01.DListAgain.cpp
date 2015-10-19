@@ -38,6 +38,20 @@ class DList
 			tail = tmp;
 		}
 	}
+
+	void showReverse(Node *node)
+	{
+		if (node)// если node не NULL
+		{
+			cout << node->data << " ";
+			showReverse(node->prev);
+		}
+		else
+		{
+			cout << endl;
+		}
+	}
+
 public:
 	DList() : head(NULL), tail(NULL), count(0)
 	{}
@@ -97,6 +111,7 @@ public:
 	// Отображение списка в обратном порядке используя рекурсию
 	void showReverse()
 	{
+		showReverse(tail); 
 		/*Node* cur = tail;
 		while (cur)
 		{
@@ -135,6 +150,20 @@ public:
 
 int main()
 {
+	DList list;
+
+	list.AddHead(3);
+	list.AddHead(2);
+	list.AddHead(1);
+
+	list.AddTail(5);
+	list.AddTail(6);
+	list.AddTail(7);
+
+	list.InsertAfter(3, 4);
+
+	list.showReverse();
+
     return 0;
 }
 
