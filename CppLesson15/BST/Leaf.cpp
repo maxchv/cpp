@@ -30,6 +30,10 @@ bool Leaf::operator==(const Leaf& right)
 	return key == right.key;
 }
 
+Leaf::operator int()
+{
+	return key;
+}
 
 ostream& operator<<(ostream& stream, Leaf& l)
 {

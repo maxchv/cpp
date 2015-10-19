@@ -6,12 +6,14 @@ class Leaf
 {
 private:
 	int key;
+	
 public:
 	~Leaf();
 	Leaf *left;
 	Leaf* right;
 	Leaf *parent;
 	Leaf(int k);
+	operator int();
 	bool operator<(const Leaf & right);
 	bool operator>(const Leaf & right);
 	bool operator==(const Leaf& right);
