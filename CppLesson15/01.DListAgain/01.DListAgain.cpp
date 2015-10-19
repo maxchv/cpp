@@ -52,6 +52,15 @@ class DList
 		}
 	}
 
+	void removeAll(Node *node)
+	{
+		if (node)
+		{
+			removeAll(node->next);
+			delete node;
+		}
+	}
+
 public:
 	DList() : head(NULL), tail(NULL), count(0)
 	{}
@@ -142,7 +151,7 @@ public:
 	// Деструктор - очистка памяти выделенной под хранение списка
 	~DList()
 	{
-
+		removeAll(head);
 	}
 
 	
