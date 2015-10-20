@@ -165,6 +165,27 @@ void ex01()
 	list.showReverse();
 }
 
+class dbLeaf
+{
+	DList list;
+	int number;
+public:
+	dbLeaf()
+	{
+
+	}
+
+	void AddFine(int n)
+	{
+		list.AddHead(n);
+	}
+
+	void ShowFines()
+	{
+		cout << list << endl;
+	}
+};
+
 int main()
 {
 	ex01();
