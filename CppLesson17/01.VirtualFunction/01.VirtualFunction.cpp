@@ -14,9 +14,7 @@ public:
 };
 
 Empty::~Empty()
-{
-
-}
+{}
 
 class Animal: public Empty
 {

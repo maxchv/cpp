@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{6530A5EA-13D5-4DE0-B397-7792928B8E90}</ProjectGuid>
+    <ProjectGuid>{93E3F51A-0E9D-419D-B2BA-BDAD16618DED}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My01VirtualFunction</RootNamespace>
+    <RootNamespace>My02MultipleInheritance</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -153,7 +153,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="01.VirtualFunction.cpp" />
+    <ClCompile Include="02.MultipleInheritance.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
