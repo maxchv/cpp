@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02.MultipleInheritance", "0
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03.InheirtanceTemplate", "03.InheirtanceTemplate\03.InheirtanceTemplate.vcxproj", "{ED353535-F48C-4269-B26A-AC10EDCAE778}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04.OverrideAndFinal", "04.OverrideAndFinal\04.OverrideAndFinal.vcxproj", "{12803549-232D-4716-B50B-30C528FBFCAA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{ED353535-F48C-4269-B26A-AC10EDCAE778}.Release|x64.Build.0 = Release|x64
 		{ED353535-F48C-4269-B26A-AC10EDCAE778}.Release|x86.ActiveCfg = Release|Win32
 		{ED353535-F48C-4269-B26A-AC10EDCAE778}.Release|x86.Build.0 = Release|Win32
+		{12803549-232D-4716-B50B-30C528FBFCAA}.Debug|x64.ActiveCfg = Debug|x64
+		{12803549-232D-4716-B50B-30C528FBFCAA}.Debug|x64.Build.0 = Debug|x64
+		{12803549-232D-4716-B50B-30C528FBFCAA}.Debug|x86.ActiveCfg = Debug|Win32
+		{12803549-232D-4716-B50B-30C528FBFCAA}.Debug|x86.Build.0 = Debug|Win32
+		{12803549-232D-4716-B50B-30C528FBFCAA}.Release|x64.ActiveCfg = Release|x64
+		{12803549-232D-4716-B50B-30C528FBFCAA}.Release|x64.Build.0 = Release|x64
+		{12803549-232D-4716-B50B-30C528FBFCAA}.Release|x86.ActiveCfg = Release|Win32
+		{12803549-232D-4716-B50B-30C528FBFCAA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
