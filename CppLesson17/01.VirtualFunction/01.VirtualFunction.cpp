@@ -5,17 +5,35 @@
 #include <iostream>
 using namespace std;
 
-class Animal
+class Empty // абстрактный класс
+{
+public:
+	char *somepointer;
+	int  somedata;
+	virtual ~Empty() = 0; // чисто виртуальный деструктор
+};
+
+Empty::~Empty()
+{
+
+}
+
+class Animal: public Empty
 {
 	const char* name;
 public:
 	Animal(const char *name)
-	{
+	{		
 		this->name = name;
 	}
-	virtual void show()
-	{
+	virtual void show() = 0; // чисто виртуальная функция -> класс абстрактный
+	/*{
 		cout << "It animal call " << name << endl;
+	}*/
+
+	virtual ~Animal()
+	{
+		cout << "Destructor Animal" << endl;
 	}
 };
 
@@ -29,8 +47,12 @@ public:
 	}
 	virtual void show() // виртуальная функция
 	{
-		Animal::show();
+		//Animal::show();
 		cout << "Length of proboscis: " << length_proboscis << "m" << endl;
+	}
+	~Elephant()
+	{
+		cout << "Destructor Elephant" << endl;
 	}
 };
 
@@ -45,8 +67,12 @@ public:
 
 	void show()
 	{
-		Animal::show();
+		//Animal::show();
 		cout << "Pride: " << pride  << endl;
+	}
+	~Lion()
+	{
+		cout << "Destructor Lion" << endl;
 	}
 };
 
@@ -59,8 +85,12 @@ public:
 
 	void show()
 	{
-		Animal::show();
+		//Animal::show();
 		cout << "Max speed: " << max_speed << endl;
+	}
+	~Dolphin()
+	{
+		cout << "Destructor Dolphin" << endl;
 	}
 };
 
@@ -71,6 +101,10 @@ int main()
 	zoo[0] = new Elephant(2);
 	zoo[1] = new Lion(7);
 	zoo[2] = new Dolphin(40);
+
+	//Animal animal("Animal");
+
+	Animal* elephan = new Elephant(2);
 
 	for (int i = 0; i < 3; i++)
 	{
