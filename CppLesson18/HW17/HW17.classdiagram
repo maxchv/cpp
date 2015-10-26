@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="507d1726-876d-4787-b7dc-76824572f24c" name="HW17" linkedPackageId="90e8247d-c230-4aab-8b93-3b410add72c9" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="6a9123bf-c38a-4d29-811f-d6d9778b04f8">
+      <profileInstance Id="a2151a01-07c4-451a-9bfc-40101551fc7e" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="67bc10d1-ff2d-411f-8080-2d0a571c3c1a">
+      <profileInstance Id="9cac8705-f9d4-40c9-8bed-c10eba406236" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7699d2c1-9424-48e4-8cd0-279a555fc273" name="Shape" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4918ea06-d82b-430e-9103-d91eddc60192" />
+        <ownedOperationsInternal>
+          <operation Id="96b6a3c2-5d24-4cd3-baa7-7a9ded7b182f" name="Load" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8162b945-7ac9-4c74-b200-66c3fe9536a1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3692f80c-c8cf-47c6-988d-c809602f2a70" direction="Return" isUnique="false">
+                  <elementDefinition Id="820eaca9-c021-40ff-be94-75b31f690a73" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0448ee80-51b5-4dfe-8b26-5bd0cfaa8616" LastKnownName="Shape**" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e9089345-eff2-4b2a-b5e7-cc7ddb95e56e" name="file" direction="In" isUnique="false">
+                  <elementDefinition Id="f77edc67-ad54-42f8-867f-2d8d9a5e67be" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c2b984f0-df30-477a-8114-0352b104dc10" LastKnownName="char *" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="86003e2d-6942-46fd-b566-2d07e6029aa0" name="Save" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6a1ebbaa-de24-439c-8bc2-cae43e6376ef" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4cbab169-0285-4cd6-8987-335ad88d40c5" direction="Return" isUnique="false">
+                  <elementDefinition Id="a3d199db-8411-404e-a934-c63f1e9f3a42" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6dd32b0a-632e-49a7-8f23-cc4de23a063d" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="267aff89-6810-4a6a-84c7-99ba9c316fbd" name="file" direction="In" isUnique="false">
+                  <elementDefinition Id="15206022-03d3-4b28-834d-705156676c5b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c2b984f0-df30-477a-8114-0352b104dc10" LastKnownName="char *" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="10c16f4d-9c5b-4590-b473-447320b764ab" name="Show" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="79d8fc3a-5745-43da-ba0b-b2efbb631c52" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b9de2c4d-1f66-472c-b631-b93df574925c" direction="Return" isUnique="false">
+                  <elementDefinition Id="370098e3-cf70-40a8-9a8c-281227c78a56" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6dd32b0a-632e-49a7-8f23-cc4de23a063d" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="c2b984f0-df30-477a-8114-0352b104dc10" name="char *" isAbstract="false" isLeaf="false" cachedFullName="char *">
+        <elementDefinition Id="fec2fd67-3390-4718-a09d-3c781f5d17d7" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6dd32b0a-632e-49a7-8f23-cc4de23a063d" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="6addaf7e-768f-4686-bd6f-daf213807827" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6d37dee4-25b7-44a6-bba8-d165d239eb1c" name="Circle" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="acab1c8b-fc51-4daf-92c9-d8d73b60cf33" />
+        <generalsInternal>
+          <generalization Id="4b21711b-64f6-4aa3-a0ba-85801ad17e0d" isSubstitutable="false">
+            <classMoniker Id="7699d2c1-9424-48e4-8cd0-279a555fc273" LastKnownName="Shape" />
+            <elementDefinition Id="e35ea7e8-a7e2-41bd-bfab-53b416553854" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="0a26a96a-b75d-46e5-8c6d-432b6f74c7c8" name="radius" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="daf55bcd-12c5-43a5-8171-2bb06fa375f3" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="0f097e5d-9383-4e20-83ac-f4e3d161de31" LastKnownName="double" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="79b7308e-4622-4792-8cbf-903ff68e7757" name="Circle" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fee6bd33-3b70-4ef5-8020-c6387bd3bce2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f56090a6-5888-43f9-8ecd-6b48ab0a2dd0" name="r" direction="In" isUnique="false">
+                  <elementDefinition Id="b40e171e-0e41-41e2-9196-464a34a7aea6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0f097e5d-9383-4e20-83ac-f4e3d161de31" LastKnownName="double" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="74110a62-88ea-41bd-98c1-d0a238438b93" name="Square  " isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6886eee9-df17-4a4f-b4f4-d31216bf2179" />
+        <generalsInternal>
+          <generalization Id="53b02e45-b801-4927-ac2c-2e00bff9dcd6" isSubstitutable="false">
+            <classMoniker Id="7699d2c1-9424-48e4-8cd0-279a555fc273" LastKnownName="Shape" />
+            <elementDefinition Id="0bcbeacc-19d2-4ed5-becf-67168a421ea6" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="0ecba4bd-4ea1-4f71-a9d4-6b6cafde560f" name="length" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="00a82431-88c2-4968-a089-f8e9c4fa2603" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="032a1732-3a6d-4ac2-ac36-ff3fc7ff3b95" LastKnownName="double" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="e9f2f7d8-319b-4c66-ad6e-7b9b444f26cc" name="Square" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="156cf6fc-d6e1-43da-a2e5-8e06ef5bc63a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="884bfc73-c854-44a0-90c7-324c0553923d" name="l" direction="In" isUnique="false">
+                  <elementDefinition Id="17eb5c27-75c2-4617-8487-acba7d5d9453" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0f097e5d-9383-4e20-83ac-f4e3d161de31" LastKnownName="double" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2472a038-55d3-4f29-9651-fcb73f052075" name="Rectangle " isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="039b2a32-a659-4c02-9145-d5aa2bb1078c" />
+        <generalsInternal>
+          <generalization Id="2accc82e-44c7-4b3a-980a-9f0b4bc807b3" isSubstitutable="false">
+            <classMoniker Id="7699d2c1-9424-48e4-8cd0-279a555fc273" LastKnownName="Shape" />
+            <elementDefinition Id="45963033-ee7f-4666-b59a-9981434ae8e7" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="28ef85e9-43ed-47a5-a449-5f4c0411f017" name="height" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="acd2bd5c-a5de-4294-bebd-97a8bcc42bef" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="0f097e5d-9383-4e20-83ac-f4e3d161de31" LastKnownName="double" />
+            </type_NamedElement>
+          </property>
+          <property Id="216b1a33-7949-4d4d-9f56-5c229819d7d3" name="width" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="33eb957b-2a90-4960-a6f0-78fde4d95265" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="0f097e5d-9383-4e20-83ac-f4e3d161de31" LastKnownName="double" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="ca28b458-2aa3-4fce-be3f-430453e67f06" name="Rectangle" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bb7182d1-260b-42bd-a1b3-30512ae308c5" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="cdd82ee0-383e-4c70-b841-4057979d9c4d" name="h" direction="In" isUnique="false">
+                  <elementDefinition Id="006bdc8e-a245-4dac-96b6-6a285da35f00" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0f097e5d-9383-4e20-83ac-f4e3d161de31" LastKnownName="double" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6ad9d99f-a0fe-4f9b-8a78-a97889c506e4" name="w" direction="In" isUnique="false">
+                  <elementDefinition Id="5af8327d-5768-4173-a3e4-4d5261e83f06" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0f097e5d-9383-4e20-83ac-f4e3d161de31" LastKnownName="double" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f98d2055-d54c-4355-b81e-f89fd090f566" name="Ellipse " isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ba05a51f-97e2-47fc-bb54-6fe2b04578cf" />
+        <generalsInternal>
+          <generalization Id="6f6a434e-e198-4b14-93e6-dad93dd89349" isSubstitutable="false">
+            <classMoniker Id="7699d2c1-9424-48e4-8cd0-279a555fc273" LastKnownName="Shape" />
+            <elementDefinition Id="8a4adb58-c186-4e64-830a-45c74a5c5881" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="d8aa2201-ae45-4536-ab1f-5cf7ee32fbf1" name="height" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f44085ec-20ae-4947-8215-d0d11f504679" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="0f097e5d-9383-4e20-83ac-f4e3d161de31" LastKnownName="double" />
+            </type_NamedElement>
+          </property>
+          <property Id="b9044888-eb0e-4e7c-9d2d-fca65f0bd02d" name="width" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="00c365a8-335c-4ece-a292-022b5399d129" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="0f097e5d-9383-4e20-83ac-f4e3d161de31" LastKnownName="double" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="34ab10a7-9763-423e-b8a6-2bdbd5dccabf" name="Ellipse" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b357f2d9-d4c1-4826-a93f-74b00bc84b8c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="de6feed5-f59d-4416-a9cd-8eda4472981b" name="h" direction="In" isUnique="false">
+                  <elementDefinition Id="05fe3a22-cfbc-4d8b-9a47-3637b9252f36" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0f097e5d-9383-4e20-83ac-f4e3d161de31" LastKnownName="double" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bdf83d0c-3c93-4516-8edf-23ee0e24913e" name="w" direction="In" isUnique="false">
+                  <elementDefinition Id="a4c22467-0aaf-4ba8-9f1c-cc24a92996ca" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0f097e5d-9383-4e20-83ac-f4e3d161de31" LastKnownName="double" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="0f097e5d-9383-4e20-83ac-f4e3d161de31" name="double" isAbstract="false" isLeaf="false" cachedFullName="double">
+        <elementDefinition Id="e00fe60f-add6-4960-b600-c3ef4aff1ede" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="032a1732-3a6d-4ac2-ac36-ff3fc7ff3b95" name="double" isAbstract="false" isLeaf="false" cachedFullName="double">
+        <elementDefinition Id="e00fe60f-add6-4960-b600-c3ef4aff1ede" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="0448ee80-51b5-4dfe-8b26-5bd0cfaa8616" name="Shape**" isAbstract="false" isLeaf="false" cachedFullName="Shape**">
+        <elementDefinition Id="c3ac64ad-19c5-4e6f-a4b5-fd1237bab525" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="90e8247d-c230-4aab-8b93-3b410add72c9" name="HW17">
+    <elementDefinition Id="1d52598a-eb04-4144-b068-ced11e410d04" />
+  </package>
+</logicalClassDesignerModel>
