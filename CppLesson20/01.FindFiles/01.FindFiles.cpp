@@ -170,17 +170,20 @@ void copy_file(char *from, char *to)
 		FILE *out = fopen(to, "wb");
 		if (out)
 		{
-			char buff;
+			/*int handle = _fileno(in);
+			long size = _filelength(handle);
+			char *buff = new char[size];			
+			fread(buff, sizeof(char), size, in);
+			fwrite(buff, sizeof(char), size, out);*/
+
 			int i = 0;
-			do 
-			{				
-				fread(&buff, sizeof(buff), 1, in);   // чтение данных в буффер
-				if (buff != EOF)
-				{
-					//cout << ++i << ") " << (int)buff << ": " << buff << endl;
-					fwrite(&buff, sizeof(buff), 1, out); // запись данных в файл
-				}
-			} while (!feof(in));
+			while (!feof(in))
+			{			
+				char buff;
+				fread(&buff, sizeof(char), 1, in);   // чтение данных в буффер				
+				cout << ++i << ") " << (int)buff << ": " << buff << endl;
+				fwrite(&buff, sizeof(char), 1, out); // запись данных в файл
+			} 
 			fclose(out);
 		}
 		fclose(in);
