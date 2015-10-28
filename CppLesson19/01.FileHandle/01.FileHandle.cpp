@@ -11,7 +11,7 @@ using namespace std;
 #pragma warning(disable: 4996)
 
 void ex01()
-{
+{	
 	FILE* f = fopen("oldfile.txt", "w");
 	fclose(f);
 	rename("oldfile.txt", "newfile.txt"); // переименование файла
