@@ -6,6 +6,7 @@
 #include <io.h>
 #include <Windows.h>
 #include <direct.h>
+#include <bitset>
 using namespace std;
 #pragma warning(disable: 4996)
 
@@ -27,11 +28,29 @@ void ex03()
 	_finddata_t fileinfo;
 	long handle = _findfirst("*", &fileinfo);
 	long next_file = handle;
+	bitset<16> b;
+	b = _A_ARCH;
+	cout << "_A_ARCH: " << b << endl;
+	b = _A_HIDDEN;
+	cout << "_A_HIDDEN: " << b << endl;
+	b = _A_NORMAL;
+	cout << "_A_NORMAL: " << b << endl;
+	b = _A_RDONLY;
+	cout << "_A_RDONLY: " << b << endl;
+	b = _A_SUBDIR;
+	cout << "_A_SUBDIR: " << b << endl;
+	b = _A_SYSTEM;
+	cout << "_A_SYSTEM: " << b << endl;
 	while (next_file != -1)
-	{		
-		AnsiToOem(fileinfo.name, fileinfo.name);
-		cout << fileinfo.name << " size: " << fileinfo.size << endl;
+	{	
 		next_file = _findnext(handle, &fileinfo);		
+		cout << fileinfo.name << " size: " << fileinfo.size << endl;
+		AnsiToOem(fileinfo.name, fileinfo.name);
+		b = fileinfo.attrib;		
+		if (fileinfo.attrib & _A_SUBDIR)
+		{
+			cout << "it is directory" << endl;
+		}
 	}
 	_findclose(handle);
 }
