@@ -66,6 +66,14 @@ void ex05()
 	_rmdir("newdir"); // удаление директории
 }
 
+void test_to_int()
+{
+	char buf[20];
+	sprintf(buf, "%lli", pow(2, 31));
+	cout << buf << endl;
+	cout << pow(2, 31) << endl;
+}
+
 int main()
 {
 	//ex01();
@@ -74,7 +82,8 @@ int main()
 	//ex03();
 	//ex04();
 	//ex05();
-	ex03();
+	test_to_int();
+
     return 0;
 }
 
