@@ -1,0 +1,2 @@
+Square: 15
+Cicrle: 10
