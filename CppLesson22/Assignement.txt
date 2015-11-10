@@ -1,0 +1,6 @@
+Напишите класс Garage который содержит объект Car. В Car есть проблемы с Motor. 
+Используйте блок try в конструкторе класса Garage для 
+перехвата исключения (брошенного из класса Motor), когда объект Car инициализируется. 
+Бросьте другое исключение из конструктора Garage для того, что бы поймать его в main().
+
+http://www.linuxtopia.org/online_books/programming_books/c++_practical_programming/c++_practical_programming_040.html
