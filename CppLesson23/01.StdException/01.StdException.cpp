@@ -5,7 +5,7 @@
 #include <iostream>
 #include <exception>
 using namespace std;
-
+#pragma warning(disable: 4996)
 class MyException: public exception
 {
 	//const char *msg; // сообщение о ошибке
@@ -109,9 +109,41 @@ void ex01()
 		unexpected(); // terminate();
 	}
 }
+#include <ctime>
+void ex02()
+{
+	time_t t;
+	time(&t);
+	tm *_time;
+	_time = localtime(&t);
+	FILE* f = fopen("error.log", "w");
+	if (f)
+	{
+		fprintf(f, "%d.%d.%d %d:%d:%d %s", _time->tm_mday, _time->tm_mon+1, _time->tm_year + 1900, _time->tm_hour, _time->tm_min, _time->tm_sec, "Error");
+		fclose(f);
+		system("error.log");
+	}
+}
+
+void ex03()
+{
+	while (true)
+	{
+		time_t t;
+		time(&t);
+		tm *_time;
+		_time = localtime(&t);
+		cout << _time->tm_hour << ":" << _time->tm_min << ":" << _time->tm_sec << endl;
+		_sleep(1000);
+		system("cls");
+	}
+}
+
 
 int main()
 {
+	ex03();
+	ex02();
 	ex01();
 	try
 	{
