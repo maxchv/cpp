@@ -70,6 +70,7 @@ int main()
 	B c;
 	C d;
 	cout << d.msg() << endl;
+	
 
     return 0;
 }
