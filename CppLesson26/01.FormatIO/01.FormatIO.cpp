@@ -131,6 +131,33 @@ void ex13()
 	cout << 1.00000001 << endl;
 }
 
+// пользовательские манипуляторы
+ostream& _line(ostream& stream)
+{
+	stream << setw(14) << setfill('-') << '-' << endl;
+	return stream;
+}
+
+class line
+{
+	int  count;
+	char symb;
+public:
+	explicit line(int n=10, char ch='-'): count(n), symb(ch)
+	{}
+	friend ostream& operator<<(ostream& stream, line& l)
+	{
+		stream << setw(l.count) << setfill(l.symb) << l.symb << endl;
+		return stream;
+	}
+};
+
+void ex14()
+{
+	//cout << setw(50) << setfill('.') << '.' << endl;
+	cout << line(13, '*') << "It is usefull" <<  endl << line(13, '*');
+}
+
 int main()
 {
 	//ex01();
@@ -138,7 +165,10 @@ int main()
 	//ex03();
 	//ex11();
 	//ex12();
-	ex13();
+	//ex13();
+
+	ex14();
+
     return 0;
 }
 
