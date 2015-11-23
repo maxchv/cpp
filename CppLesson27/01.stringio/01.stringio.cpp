@@ -74,6 +74,13 @@ void ex03()
 	cout << ss.str();
 }
 
+string make_row(int i, int n, char sym)
+{
+	ostringstream ss;
+	string stars(1 + i * 2, sym);
+	ss << setw(i + n / 2 + 1) << right << stars << endl;
+	return ss.str();
+}
 
 string task01(int n)
 {
@@ -81,16 +88,14 @@ string task01(int n)
 		«адание. —формировать строку из звездочек в форме ромба
 		использу€ строковый поток
 	*/
-	stringstream ss;
+	ostringstream ss;
 	for (int i = 0; i < n / 2 + 1; i++)
 	{
-		string stars(1 + i * 2, '*');
-		ss << setw(i + n / 2 + 1) << right << stars << endl;
+		ss << make_row(i, n, '*');
 	}
 	for (int i = n / 2 - 1; i >= 0; i--)
 	{
-		string stars(1 + i * 2, '*');
-		ss << setw(i + n / 2 + 1) << right << stars << endl;
+		ss << make_row(i, n, '*');
 	}
 	return ss.str();
 }
