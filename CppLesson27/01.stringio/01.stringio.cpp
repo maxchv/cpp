@@ -100,18 +100,33 @@ string task01(int n)
 	return ss.str();
 }
 
+void ex06()
+{
+	string str;
+	for (int i = 0; i < 30; i++)
+	{
+		str += '*';
+	}
+	cout << str;
+
+	string str2(30, '-');
+	cout << str2;
+}
+
 int main()
 {
 	//ex00();
 	//ex01();
 	//ex02();
 	//ex03();
-	for (int i = 1; i < 10; i += 2)
-	{
-		cout << "i = " << i << endl;
-		string str = task01(i);
-		cout << str << endl << endl;
-	}
+	///*for (int i = 1; i < 10; i += 2)
+	//{
+	//	cout << "i = " << i << endl;
+	//	string str = task01(i);
+	//	cout << str << endl << endl;
+	//}*/
+
+	ex06();
 
 	return 0;
 }
