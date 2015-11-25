@@ -187,7 +187,7 @@ void ex05()
 	auto it3 = lst2.end();
 	// lst1.splice(it, lst2, it2); // { 5, 2, 4, 9, 2, 0, 3, 2 };
 	//lst1.splice(it, lst2, it2); // { 5, 2, 2, 3, 2 };
-	lst1.splice(it, lst2, it2, it3); // { 5, 2, 2, 0, 3, 2 };
+	lst1.splice(it, lst2, it2, it3); // { 5, 2, 2, 3, 2 };
 
 	cout << "first: " << endl << lst1 << " second: " << boolalpha << lst2.empty() << endl;
 	cout << lst2 << endl;
@@ -203,7 +203,9 @@ int main()
 	//ex02();
 	//ex03();
 	//ex04();
-	ex05();
+	//ex05();
+
+	void(*f)(void) = []{cout << "test" << endl;};
 
     return 0;
 }
