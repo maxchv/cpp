@@ -7,6 +7,7 @@
 #include <string>
 using namespace std;
 
+// создание set
 void ex01()
 {
 	set<int> s;
@@ -27,6 +28,7 @@ void ex01()
 	}
 }
 
+// поиск и подсчет элементов
 void ex02()
 {
 	set<int> s;
@@ -49,6 +51,7 @@ void ex02()
 	}
 }
 
+// поиск и удаление элементов
 void ex03()
 {
 	multiset<int> s;
@@ -102,6 +105,7 @@ public:
 	}
 };
 
+// хранение пользовтелских данных в сете
 void ex04()
 {
 	set<Student> group;
@@ -117,6 +121,17 @@ void ex04()
 		cout << s << endl;
 	}
 }
+class Comparer;
+class Car
+{
+private:
+	double _price;
+	friend Comparer;
+	Car(double price): _price(price)
+	{
+
+	}
+};
 
 // предикат - определяет порядок сортировки данных в set
 class Comparer
@@ -125,6 +140,11 @@ public:
 	bool operator()(int l, int r) const 
 	{
 		return l > r;
+	}
+
+	bool operator()(Car l, Car r) const
+	{
+		return l._price < r._price;
 	}
 };
 
@@ -141,6 +161,14 @@ void ex05()
 		cout << v << " ";
 	}
 	cout << endl;
+}
+
+
+void ex06()
+{
+	set<Car, Comparer> cars;
+	cars.emplace(10000);
+	cars.emplace(20000);
 }
 
 
