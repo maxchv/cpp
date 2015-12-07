@@ -5,11 +5,12 @@
 #include <map>
 #include <iostream>
 #include <string>
+#include <locale>
 using namespace std;
 
 // создание словар€
 void ex01()
-{
+{	
 	map<string, int> group;
 	
 	// в словаре данных хран€тс€ в виде экземпл€ров класса pair
