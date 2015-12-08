@@ -6,6 +6,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <functional>
 using namespace std;
 
 template<typename T, typename UniFunc>
@@ -53,13 +54,14 @@ public:
 
 void ex01(const vector<int> &v)
 {
-	// соответствуют ли все элементы заданному условию
+	// соответствуют ли все элеметы заданному условию	
 	if (all_of(v.begin(), v.end(), IsPositive()))
 	{
 		cout << "All items are positive" << endl;
 	}
 }
 
+// предикат - проверка на отрицательные значения
 class IsNegative
 {
 public:
