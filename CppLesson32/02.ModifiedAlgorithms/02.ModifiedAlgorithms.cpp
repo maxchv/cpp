@@ -6,6 +6,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <numeric>
 using namespace std;
 
 template<typename T>
@@ -37,6 +38,7 @@ class A
 	
 public:
 	int _a;
+	A() {}
 	A(int a): _a(a)
 	{}
 };
@@ -51,7 +53,7 @@ bool sortA(const A& a1, const A& a2)
 	return a1._a < a2._a;
 }
 
-void ex06()
+void _ex06()
 {
 	vector<A> a(10);
 	generate(a.begin(), a.end(), getA);
@@ -173,15 +175,126 @@ void ex06()
 	cout << endl;
 }
 
+void ex07(vector<int> &v)
+{
+	v.resize(10);
+	generate(v.begin(), v.end(), GetRandom(10));
+	sort(v.begin(), v.end());
+	cout << "v: ";
+	cout << v << endl;
+	if (is_sorted(v.begin(), v.end())) // отсортирован ли массив?
+	{
+		cout << "Vector is sorted" << endl;
+	}
+
+	vector<int> nv(10);
+	generate(nv.begin(), nv.end(), GetRandom(20));
+	sort(nv.begin(), nv.end()); // перед объединением нужно отсортировать массивы
+	cout << "nv: ";
+	cout << nv << endl;
+
+	vector<int> m(v.size() + nv.size());
+	// объединение двух последовательностей
+	merge(v.begin(), v.end(), nv.begin(), nv.end(), m.begin());
+	cout << "m: ";
+	cout << m << endl;
+}
+
+bool cmp(int a, int b)
+{
+	return abs(a) < abs(b);
+}
+
+void ex08(vector<int> &v)
+{
+	v.push_back(-10);
+	v.push_back(-100);
+	random_shuffle(v.begin(), v.end());
+	cout << v << endl;
+	// найти наибольший элемент по абсолютному значению
+	auto it_max = max_element(v.begin(), v.end(), cmp);
+	cout << "max: " << *it_max << endl;
+
+	// найти наименьший элемент по абсолютному значению
+	auto it_min = min_element(v.begin(), v.end(), cmp);
+	cout << "min: " << *it_min << endl;
+
+	//pair<vector<int>::iterator, vector<int>::iterator> it_minmax =
+	auto it_minmax = minmax_element(v.begin(), v.end(), cmp);
+	cout << "min: " << *it_minmax.first 
+		 << " max: " << *it_minmax.second << endl;
+}
+
+int mysum(int a, int b)
+{
+	return abs(a) + abs(b);
+}
+
+int myprod(int a, int b)
+{
+	return abs(a) * abs(b);
+}
+
+void ex09(vector<int> &v)
+{
+	int sum = accumulate(v.begin(), v.end(), 0, mysum);
+	cout << "sum: " << sum << endl;
+
+	int prod = accumulate(v.begin(), v.end(), 1, myprod);
+	cout << "prod: " << prod << endl;
+}
+
+void ex10()
+{
+	// Пример проверки слова на палиндром
+	string word = "MAdam";
+	// преобразование к нижнему регистру
+	transform(word.begin(), word.end(), word.begin(), tolower);
+	// вариант без алгоритмов
+	bool is_palindrom = true;
+	for (int i = 0; i < word.size() / 2; i++)
+	{
+		if (word[i] != word[word.size() - i - 1])
+		{
+			is_palindrom = false;
+			break;
+		}
+	}
+	// вариант 1 с алгоритмами 
+	string rev(word);
+	reverse(rev.begin(), rev.end());
+	if (word == rev)
+	{
+		is_palindrom = true;
+	}
+	else
+	{
+		is_palindrom = false;
+	}
+	// вариант 2 с алгоритмами
+	is_palindrom = equal(word.begin(), word.begin() + word.size() / 2, word.rbegin());
+
+	if (is_palindrom)
+	{
+		cout << "word " << word << " is palindrome" << endl;
+	}
+}
+
 int main()
 {
 	vector<int> v;
-	ex01(v);
+	/*ex01(v);
 	ex02(v);
 	ex03(v);
 	ex04(v);
 	ex05(v);
-	ex06();
+	ex06();*/
+	ex07(v);
+	ex08(v);
+	ex09(v);
+
+	
+
     return 0;
 }
 
