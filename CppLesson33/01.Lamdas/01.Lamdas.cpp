@@ -63,10 +63,13 @@ void ex00()
 
 class Generate
 {
+	int _max;
 public:
+	Generate(int max = 100): _max(max)
+	{}
 	int operator()()
 	{
-		return rand() % 100;
+		return rand() % _max;
 	}
 };
 
@@ -77,7 +80,7 @@ void ex01()
 	
 	int arr[10];
 	//generate(arr, arr + 10, []() { return rand() % 100; });
-	generate(arr, arr + 10, Generate());
+	generate(arr, arr + 10, Generate(10));
 	
 	bubleSort(arr, 10, cmp);
 
@@ -128,11 +131,34 @@ void ex02()
 	cout << endl;
 }
 
+void ex03()
+{
+	int a = 5, b = 10, c = 20, d = 15;
+	
+	// захват переменной a
+	auto f = [a]{ cout << a << endl; };
+	f();
+
+	int arr[10];
+	
+	generate(arr, arr + 10, [a]() { return rand() % a; });
+	for_each(arr, arr + 10, [](int a) { cout << a << " ";});
+	cout << endl;
+	// захват всех переменных данного контекста
+	auto foo = [=]{cout << a << " " << b << " " << c << " " << d << endl;};
+	foo();
+}
+
+//		Практика
+//  1. сгенерировать массив (вектор) случайных чисел в диапазоне 0..1000
+//  2. посчитать количество элеметов > 200 и < 600 (алгоритм count_if) используя лямбду
+
 int main()
 {
 	//ex00();
 	//ex01();
-	ex02();
+	//ex02();
+	//ex03();
     return 0;
 }
 
