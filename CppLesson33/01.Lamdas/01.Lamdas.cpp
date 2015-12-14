@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <vector>
 #include <string>
+#include <functional>
 using namespace std;
 
 
@@ -136,7 +137,7 @@ void ex03()
 	int a = 5, b = 10, c = 20, d = 15;
 	
 	// захват переменной a
-	auto f = [a]{ cout << a << endl; };
+	function<void()> f = [a]{ cout << a << endl; };
 	f();
 
 	int arr[10];
@@ -145,13 +146,77 @@ void ex03()
 	for_each(arr, arr + 10, [](int a) { cout << a << " ";});
 	cout << endl;
 	// захват всех переменных данного контекста
-	auto foo = [=]{cout << a << " " << b << " " << c << " " << d << endl;};
-	foo();
+	f = [=]{cout << a << " " << b << " " << c << " " << d << endl;};
+	f();
+}
+
+void ex04()
+{
+	string str = "hElLo";
+	// tolower
+	transform(str.begin(), str.end(), str.begin(), [](auto ch) {return ch | 32;});
+	cout << str << endl;
+	// toupper
+	transform(str.begin(), str.end(), str.begin(), [](auto ch) {return ch ^ 32;});
+	cout << str << endl;
 }
 
 //		Практика
 //  1. сгенерировать массив (вектор) случайных чисел в диапазоне 0..1000
 //  2. посчитать количество элеметов > 200 и < 600 (алгоритм count_if) используя лямбду
+
+class Functor
+{
+	mutable int _i;
+public:
+	Functor(int i):_i(i)
+	{}
+	int operator()() const
+	{
+		return _i++;
+	}
+};
+
+void ex05()
+{
+	int arr[10];
+	int i = 0;
+	int j = 10;
+	// данные захватываются по значению
+	// для захвата всех данных по значению [=]
+	generate(arr, arr + 10, [i]() mutable { return i++; });
+	print_array(arr, arr + 10);
+	cout << endl << "i: " << i << endl;
+
+	// данные захватываются по ссылке
+	// для захвата всех данных по значению [&]
+	generate(arr, arr + 10, [&]() { i++; return j++; });
+	cout << endl << "i: " << i << endl;
+	cout << endl << "j: " << j << endl;
+}
+
+void ex06()
+{
+	int arr[10];
+	int i = 0;	
+	generate(arr, arr + 10, [i]() mutable { return i++; });
+
+	transform(arr, arr + 10, arr, [](int i) -> double {
+		if (i == 0)
+		{
+			return i + 2.0;
+		}
+		else if (i % 2 == 0)
+		{
+			return i / 2.0;
+		}
+		else
+		{
+			return i*i;
+		}
+	});
+	print_array(arr, arr + 10);
+}
 
 int main()
 {
@@ -159,6 +224,10 @@ int main()
 	//ex01();
 	//ex02();
 	//ex03();
+	//ex04();
+	//ex05();
+	ex06();
+
     return 0;
 }
 
