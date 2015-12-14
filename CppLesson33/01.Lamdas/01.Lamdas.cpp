@@ -86,12 +86,12 @@ void ex01()
 	cout << endl;
 }
 
-class Gipopotam
+class Hippo
 {
 	string _name;
 	int _weight;
 public:
-	Gipopotam(string name, int weight): 
+	Hippo(string name, int weight): 
 		_name(name), _weight(weight)
 	{}
 
@@ -105,7 +105,7 @@ public:
 		return _weight;
 	}
 
-	friend ostream& operator<<(ostream& stream, Gipopotam& gipo)
+	friend ostream& operator<<(ostream& stream, Hippo& gipo)
 	{
 		stream << gipo._name << " " << gipo._weight;
 		return stream;
@@ -114,13 +114,13 @@ public:
 
 void ex02()
 {
-	vector<Gipopotam> leak;
-	leak.push_back(Gipopotam("Vasja", rand() % 100 + 50));
-	leak.push_back(Gipopotam("Sharik", rand() % 100 + 50));
-	leak.push_back(Gipopotam("Slunavchick", rand() % 100 + 50));
-	leak.push_back(Gipopotam("Antidot", rand() % 100 + 50));
+	vector<Hippo> leak;
+	leak.push_back(Hippo("Vasja", rand() % 100 + 50));
+	leak.push_back(Hippo("Sharik", rand() % 100 + 50));
+	leak.push_back(Hippo("Slunavchick", rand() % 100 + 50));
+	leak.push_back(Hippo("Antidot", rand() % 100 + 50));
 
-	sort(leak.begin(), leak.end(), [](Gipopotam g1, Gipopotam g2) { return g1.Name() < g2.Name(); });
+	sort(leak.begin(), leak.end(), [](Hippo g1, Hippo g2) { return g1.Name() < g2.Name(); });
 	print_array(leak.begin(), leak.end());
 	cout << endl;
 	sort(leak.begin(), leak.end(), [](auto g1, auto g2) { return g1.Weight() < g2.Weight(); });
