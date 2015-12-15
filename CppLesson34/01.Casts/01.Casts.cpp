@@ -108,13 +108,40 @@ void ex03()
 	}
 };
 
+void ex04()
+{
+	int num = 10;
+	int *p = &num;
+	// небезопасное преобразование из чего угодно во что угодно
+	unsigned int add = reinterpret_cast<int>(p);
+	cout << "Variable num has address: " << add << endl;
+	B* b = reinterpret_cast<B *>(p);
+	b->a();
+}
+
+void ex05()
+{
+	A* a = new A(0);
+	B* b = new B(0, 1);
+	C* c = new C(0, 1, 2);
+	
+	cout << typeid(*a).name() << endl;
+	a = b;
+	cout.setf(ios::boolalpha);
+	cout << typeid(*a).name() << " is B: " << (typeid(*a) == typeid(B)) << endl;
+	a = c;
+	cout << typeid(*a).name() << " is C: " << (typeid(*a) == typeid(C)) << endl;
+}
+
 int main()
 {
 	// преобразование типов
 
 	/*ex01();
-	ex02();*/
+	ex02();
 	ex03();
+	ex04();
+	ex05();*/
     return 0;
 }
 
