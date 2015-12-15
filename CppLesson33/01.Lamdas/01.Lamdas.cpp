@@ -218,6 +218,28 @@ void ex06()
 	print_array(arr, arr + 10);
 }
 
+template<typename T1, typename T2>
+auto add(T1 t1, T2 t2)
+{
+	decltype(t1 + t2) t3;
+	t3 = t1 + t2;
+	return t3;
+}
+
+void ex07()
+{
+	// лямбда, которая генерирует лямбду
+	auto genLambda = [](int val)->function<int()>
+	{
+		int a = 0, b = 1;
+		return [a, b]() mutable {a = b; b = a + b; return a;};
+	};
+
+	int arr[10];
+	generate(arr, arr + 10, genLambda(10));
+	print_array(arr, arr + 10);
+}
+
 int main()
 {
 	//ex00();
@@ -226,7 +248,8 @@ int main()
 	//ex03();
 	//ex04();
 	//ex05();
-	ex06();
+	//ex06();
+	ex07();
 
     return 0;
 }
