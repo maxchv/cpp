@@ -1,0 +1,47 @@
+https://stackoverflow.com/questions/40314227/how-to-start-on-this-priority-queue-homework
+
+A store announces a sale campaign whereby any customer who buys two items gets 50% off on the cheaper one. 
+If the customer buys more than two items, he/she must group them into pairs of two to indicate the items that 
+the oer should apply to.
+
+Suppose you want to buy n items in total. Write a method that will give you the best pairing of the items (the 
+one with the minimum price). The method's signature is:
+
+	public static LinkedList<ItemPair> minPairing(LinkedList<Item> items).
+
+If you leave it up to the store owner, he/she will try to pair the items in order to obtain the maximum price. 
+Write a method that will help the store owner achieve this. The method's signature is:
+
+	public static LinkedList<ItemPair> maxPairing(LinkedList<Item> items).
+
+How much will you gain if you use your method (instead of the shop owner's method) for the following list of item 
+prices: 60 $, 100 $, 400 $, 600 $, 200 $, 80 $.
+
+Using the following classes:
+
+public class Item {
+    private int id;
+    private double price;
+
+    public Item (int id, double price ) {
+        this.id = id;
+        this. price = price;
+    }
+    int getId () {
+        return id;
+    }
+    double getPrice () {
+        return price;
+    }
+}
+and the class :
+
+public class ItemPair {
+    public Item first;
+    public Item second;
+
+    public ItemPair (Item first, Item second ) {
+        this. first = first;
+        this. second = second;
+    }
+}
