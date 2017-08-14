@@ -1,0 +1,56 @@
+Есть класс List:
+
+class List {
+	int* arr;
+	const int size = -1;
+	int cur = -1;
+
+	List(int size): size(size), cur(0) {		
+		arr = new int[size];
+	}
+
+	int length() const
+	{
+		return size;
+	}
+
+	int operator[](int idx)
+	{
+		return arr[idx];
+	}
+
+	void add(int item) {
+		arr[cur++] = item;
+	}
+
+	void removeLast() {
+		arr[cur--];
+	}
+
+	~List()
+	{
+		delete arr;
+	}
+};
+
+1. Модифицировать класс List и сделать его обобщенным
+
+2. Реализовать класс ListException, EmptyListException и FullListException, IndexOutOfRangeException
+
+ListException является наследником класса exception
+EmptyListException, FullListException и IndexOutOfRangeException наследуют класс ListException
+
+3. В классе List добавить исключительные ситуации в методы:
+	
+	- констуктор на тот случай, если size < 0 (исключение типа IndexOutOfRangeException)	
+
+	- removeLast() на тот случай, если производится попытка удаления элемента
+	  из пустого массива obj (исключение типа EmptyListException)
+	  
+	- add() на тот случай, если массив obj полностью заполнен данными  (исключение типа FullListException)  
+	
+	- operator[] на тот случай, если идет обращение к недопустимому элементу массива arr
+	
+
+4. Привести пример работы с классом List<E>. Воспроизвести исключения EmptyListException, FullListException и IndexOutOfRangeException
+    перехватить эти исключения в блоке try...catch и вывести сообщения о ошибках на экаран
